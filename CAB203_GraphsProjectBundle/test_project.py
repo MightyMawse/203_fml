@@ -35,8 +35,8 @@ class TestAssignDrivers(unittest.TestCase):
         crew = {
             # Driver,   Roles allowed        ETCS certified, shift,     peekTimeRestricted
             ('Alice',   ('Guard', 'Driver'), True,           'Morning', False),
-            ('Bob',     ('Driver'),          False,          'Day',     True),
-            ('Charlie', ('Guard'),           True,           'Morning', False),
+            ('Bob',     ('Driver',),          False,          'Day',     True),
+            ('Charlie', ('Guard',),           True,           'Morning', False),
             ('Denise',  ('Guard', 'Driver'), False,          'Day',     True)
         }
 
@@ -58,8 +58,8 @@ class TestAssignDrivers(unittest.TestCase):
         crew = {
             # Driver,   Roles allowed        ETCS certified, shift,     peekTimeRestricted
             ('Alice',   ('Guard', 'Driver'), True,           'Morning', False),
-            ('Bob',     ('Driver'),          False,          'Day',     True),
-            ('Charlie', ('Guard'),           True,           'Morning', False),
+            ('Bob',     ('Driver',),          False,          'Day',     True),
+            ('Charlie', ('Guard',),           True,           'Morning', False),
             ('Denise',  ('Guard', 'Driver'), False,          'Day',     True),
             ('Elaine',  ('Guard', 'Driver'), False,          'Night',   False),
             ('Frank',   ('Guard', 'Driver'), True,           'Night',   False),
@@ -86,7 +86,7 @@ class TestAssignDrivers(unittest.TestCase):
         crew = {
             # Driver,   Roles allowed        ETCS certified, shift,     peekTimeRestricted
             ('Alice',   ('Guard', 'Driver'), True,           'Morning', False),
-            ('Bob',     ('Driver'),          False,          'Day',     True),
+            ('Bob',     ('Driver',),          False,          'Day',     True),
             ('Charlie', ('Guard'),           False,          'Morning', False),
             ('Denise',  ('Guard', 'Driver'), False,          'Day',     True),
             ('Elaine',  ('Guard', 'Driver'), False,          'Night',   False),
@@ -112,8 +112,8 @@ class TestAssignDrivers(unittest.TestCase):
         crew = {
             # Driver,   Roles allowed        ETCS certified, shift,     peekTimeRestricted
             ('Alice',   ('Guard', 'Driver'), True,           'Morning', False),
-            ('Bob',     ('Driver'),          False,          'Day',     True),
-            ('Charlie', ('Guard'),           False,          'Morning', True),
+            ('Bob',     ('Driver',),          False,          'Day',     True),
+            ('Charlie', ('Guard',),           False,          'Morning', True),
             ('Denise',  ('Guard', 'Driver'), False,          'Day',     True),
             ('Elaine',  ('Guard', 'Driver'), False,          'Night',   False),
             ('Frank',   ('Guard', 'Driver'), True,           'Night',   False),
@@ -181,7 +181,6 @@ class TestTrainSchedule(unittest.TestCase):
             ('IPNA', 9,   22, 4,     4),
             ('RPSP', 9,   22, 3,     3),
             ('SHCL', 9,   22, 3,     2),
-
         ]
 
         m = P.trainSchedule(self.slotsFromSchedule(schedule))
